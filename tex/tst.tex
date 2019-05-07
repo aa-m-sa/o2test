@@ -1,0 +1,87 @@
+
+\documentclass[12pt]{article}
+\usepackage{mausmathex}     % remove clutter -> most things in .sty
+
+\usepackage{fancyhdr}       % for page numbers in a footer
+\usepackage{lastpage}
+
+% homework template to be used with mausmathex
+% compile with e.g. latexmk --xelatex or lualatex
+
+%suppress numbering for subsections
+\setcounter{secnumdepth}{0}
+
+% if we need a bibliography uncomment the following
+%\usepackage[hyperref=true, style=alphabetic]{biblatex}
+
+% quick hack for a more sensible article entries in bib
+% consider more elaborate biblatex style file as in
+%%http://tex.stackexchange.com/questions/10682/suppress-in-biblatex
+%\renewbibmacro{in:}{%
+%  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+%\addbibresource{bibfile.bib}  % biblatex .bib file
+
+% Set these useful commands...
+\newcommand{\Student}{Firstname Surname}
+\newcommand{\StudentId}{00000000}
+\newcommand{\Email}{first.surname@cs.helsinki.fi}
+\newcommand{\CourseName}{Introduction to Whatever \hfill Autumn 2015}
+\newcommand{\ProblemSet}{Problem Set 0}
+
+
+\begin{document}
+    % fancyhdr + lastpage: page numbering
+    \pagestyle{fancyplain}
+    \fancyhf{}
+    \cfoot{\thepage \, (\pageref{LastPage})}
+    \renewcommand{\headrulewidth}{0pt}
+
+    % ... they are used in this frankenarticle title / top matter thing.
+    % (TODO: impelementation -> to the package file)
+
+    \noindent
+    {\bf \CourseName}
+
+    \noindent
+    Homework report for
+    {\bf \ProblemSet}
+
+    \bigskip
+
+    {\raggedright
+        {\bf \Student} \\
+        {\texttt \Email } \\
+        Student id \StudentId \\
+        \today
+    }
+
+
+    % for short-ish homework sets separate page for ToC seems excessive
+    % so we stick it on the same page with the top matter
+    \tableofcontents
+
+    \newpage
+
+    % main matter
+
+    \section{Pen-and-paper problems}
+    \label{sec:pen_and_paper_problems}
+
+
+    \subsection{Problem 1}
+    \label{sub:problem_1}
+
+    Blah blah \dots
+
+    \paragraph{Part (a)}
+    Demonstrate answering to multiparted questions.
+
+    \paragraph{Part (b)}
+    Like this.
+
+    \section{Programming problems}
+    \label{sec:programming_problems}
+
+
+
+\end{document}
